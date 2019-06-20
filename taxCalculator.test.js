@@ -20,22 +20,22 @@ describe("Calculation according to income brackets", () => {
     });
   });
   describe("Calculations", () => {
-    it("should return 0 if input income is 0", () => {
+    it("should return 0 for income of 0", () => {
       expect(computeTax(0)).toBe(0);
     });
-    it("should return correct tax for first tier", () => {
+    it("should return 2m tax for income of 40m (first tier)", () => {
       expect(computeTax(firstTierAnnual)).toBe(2000000);
     });
-    it("should return correct tax for second tier", () => {
+    it("should return 25m tax for income of 200m (second tier)", () => {
       expect(computeTax(secondTierAnnual)).toBe(25000000);
     });
-    it("should return correct tax for third tier", () => {
+    it("should return 70m tax for income of 400m (third tier)", () => {
       expect(computeTax(thirdTierAnnual)).toBe(70000000);
     });
-    it("should return correct tax for max tier", () => {
+    it("should return 170m tax for income of 750m (max tier)", () => {
       expect(computeTax(maxTierAnnual)).toBe(170000000);
     });
-    it("should return correct tax for given example calculation", () => {
+    it("should return 45m tax for income of 300m (third tier/given example)", () => {
       expect(computeTax(300000000)).toBe(45000000);
     });
   });
