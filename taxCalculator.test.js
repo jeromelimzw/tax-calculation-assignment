@@ -35,5 +35,8 @@ describe("Calculation according to income brackets", () => {
     it("should return correct tax for max tier", () => {
       expect(computeTax(maxTierAnnual)).toBe(170000000);
     });
+    it("should return correct tax for given example calculation", () => {
+      expect(computeTax(300000000)).toBe(45000000);
+    });
   });
 });
