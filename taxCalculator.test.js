@@ -1,5 +1,10 @@
 const { computeTax } = require("./taxCalculator");
 
+const firstTierAnnual = 40000000; //40m
+const secondTierAnnual = 200000000; //200m
+const thirdTierAnnual = 400000000; // 400m
+const maxTierAnnual = 750000000; //750m
+
 describe("Calculation according to income brackets", () => {
   describe("Error handling", () => {
     it("should return error if input is not a number", () => {
@@ -12,6 +17,14 @@ describe("Calculation according to income brackets", () => {
     });
     it("should return error if input is empty", () => {
       expect(() => computeTax()).toThrow("Error, please enter valid number");
+    });
+  });
+  describe("Calculations", () => {
+    it("should return 0 if input income is 0", () => {
+      expect(computeTax(0)).toBe(0);
+    });
+    it("should return correct tax for first tier", () => {
+      expect(computeTax(firstTierAnnual)).toBe(2000000);
     });
   });
 });
