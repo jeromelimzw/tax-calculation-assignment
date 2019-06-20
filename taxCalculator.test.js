@@ -26,5 +26,8 @@ describe("Calculation according to income brackets", () => {
     it("should return correct tax for first tier", () => {
       expect(computeTax(firstTierAnnual)).toBe(2000000);
     });
+    it("should return correct tax for second tier", () => {
+      expect(computeTax(secondTierAnnual)).toBe(25000000);
+    });
   });
 });

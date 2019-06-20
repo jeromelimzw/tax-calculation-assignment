@@ -20,6 +20,8 @@ const computeTax = income => {
   if (income < 0) throw new Error("Error, income must be positive");
   // actual calculations
   if (income <= bracketOne) return income * tierOneRate;
+  if (income > bracketOne && income <= bracketTwo)
+    return bracketOneMaxTax + tierTwoRate * (income - bracketOne);
 };
 
 module.exports = { computeTax };
