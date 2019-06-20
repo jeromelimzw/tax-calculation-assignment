@@ -1,8 +1,12 @@
 # Tax Calculation Assignment
 
 ## Available Scripts
-
+After cloning the repository: 
 In the project directory, you can run:
+
+### `npm i` 
+
+to install required dependencies
 
 ### `npm test` 
 
