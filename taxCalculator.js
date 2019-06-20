@@ -24,6 +24,7 @@ const computeTax = income => {
     return bracketOneMaxTax + tierTwoRate * (income - bracketOne);
   if (income > bracketTwo && income <= bracketThree)
     return bracketTwoMaxTax + tierThreeRate * (income - bracketTwo);
+  return bracketThreeMaxTax + tierFourRate * (income - bracketThree);
 };
 
 module.exports = { computeTax };
